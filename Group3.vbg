@@ -1,2 +1,180 @@
-VBGROUP 5.0
-StartupProject=MP1.vbp
+==================================== FORM 1 (LAUNCHER) ==================================================
+Option Explicit
+
+Private Sub Command1_Click()
+End
+End Sub
+
+Private Sub Command2_Click()
+MP1.Show
+Unload Me
+End Sub
+
+==================================== FORM 2 (POKEDEX) ==================================================
+Option Explicit
+Private Sub Command1_Click()
+MP1a.Show
+Unload Me
+End Sub
+
+Private Sub Command2_Click()
+End
+End Sub
+
+Private Sub Exit_Click()
+End
+End Sub
+
+Private Sub Help_Click()
+
+End Sub
+
+Private Sub Kabuto_Click()
+MsgBox ("Height: 1'08" & vbNewLine & "Weight: 25.4 lbs" & vbNewLine & "Category: Shellfish" & vbNewLine & "Abilities: Battle Armor")
+
+End Sub
+
+Private Sub Magikarp_Click()
+MsgBox ("Height: 2'11" & vbNewLine & "Weight: 22.0 lbs" & vbNewLine & "Category: Fish" & vbNewLine & "Abilities: Swift Swim")
+End Sub
+
+Private Sub Main_Click()
+MP1a.Show
+Unload Me
+End Sub
+
+Private Sub Pikachu_Click()
+MsgBox ("Height: 3'03" & vbNewLine & "Weight: 2.87 lbs" & vbNewLine & "Category: Electric" & vbNewLine & "Abilities: Thunderbolt")
+
+End Sub
+
+Private Sub Types_Click()
+Dim Types As String
+Types = MsgBox("Grass" & vbNewLine & "Fires" & vbNewLine & "Water" & vbNewLine & "Normal" & vbNewLine & "Electric" & vbNewLine & "Psychic" & vbNewLine & "Fighting" & vbNewLine & "Rock" & vbNewLine & "Ground" & vbNewLine & "Flying" & vbNewLine & "Bug" & vbNewLine & "Poison" & vbNewLine & "Dark" & vbNewLine & "Ghost" & vbNewLine & "Ice" & vbNewLine & "Steel" & vbNewLine & "Dragon" & vbNewLine & "Fairy", vbOKOnly, "Types")
+End Sub
+
+Private Sub Calculator_Click()
+CalculatorMP3.Show
+Unload Me
+End Sub
+
+
+==================================== FORM 3 (CALCULATOR) ==================================================
+Option Explicit
+Private Sub Command1_Click()
+Dim pi As Double
+pi = 4 * Atn(1)
+Dim txtInput As Double
+txtInput = Text1.Text
+
+Label1.Caption = Sin(CSng(Text1.Text) * pi / 180)
+
+End Sub
+
+Private Sub Command10_Click()
+MP1a.Show
+Unload Me
+End Sub
+
+Private Sub Command2_Click()
+Dim pi As Double
+pi = 4 * Atn(1)
+Dim txtInput As Double
+txtInput = Text1.Text
+
+Label1.Caption = Cos(txtInput * pi / 180)
+
+While txtInput >= 360
+    txtInput = txtInput - 360
+Wend
+
+While txtInput < 0
+    txtInput = txtInput + 360
+Wend
+
+If txtInput = 90 Or txtInput = 270 Then
+    Label1.Caption = "0"
+End If
+End Sub
+
+Private Sub Command3_Click()
+Dim pi As Double
+pi = 4 * Atn(1)
+Dim txtInput As Double
+txtInput = Text1.Text
+Label1.Caption = Tan(txtInput * pi / 180)
+
+While txtInput >= 360
+    txtInput = txtInput - 360
+Wend
+
+While txtInput <= 0
+    txtInput = txtInput + 360
+Wend
+
+If txtInput = 90 Or txtInput = 270 Then
+    Label1.Caption = "Undefined"
+End If
+
+End Sub
+
+Private Sub Command4_Click()
+Dim pi As Double
+pi = 4 * Atn(1)
+Label1.Caption = (Atn(CSng(Text1.Text)) * 180 / pi)
+End Sub
+
+Private Sub Command5_Click()
+On Error GoTo oops
+Text4.Text = CSng(Text2.Text) + CSng(Text3.Text)
+
+oops:
+If Err.Number = 13 Then
+    Dim Message As String
+    Message = MsgBox("Invalid input. Check for letters.", vbOKOnly, "Error")
+    
+End If
+End Sub
+
+Private Sub Command6_Click()
+On Error GoTo oops
+Text4.Text = CSng(Text2.Text) - CSng(Text3.Text)
+
+oops:
+If Err.Number = 13 Then
+    Dim Message As String
+    Message = MsgBox("Invalid input. Check for letters.", vbOKOnly, "Error")
+End If
+End Sub
+
+Private Sub Command7_Click()
+On Error GoTo oops
+Text4.Text = CSng(Text2.Text) * CSng(Text3.Text)
+
+oops:
+If Err.Number = 13 Then
+    Dim Message As String
+    Message = MsgBox("Invalid input. Check for letters.", vbOKOnly, "Error")
+End If
+End Sub
+
+Private Sub Command8_Click()
+On Error GoTo oops
+Text4.Text = CSng(Text2.Text) / CSng(Text3.Text)
+
+oops:
+If Err.Number = 13 Then
+    Dim Message As String
+    Message = MsgBox("Invalid input. Check for letters.", vbOKOnly, "Error")
+End If
+End Sub
+
+Private Sub Command9_Click()
+Text2.Text = ""
+Text3.Text = ""
+Text4.Text = ""
+End Sub
+
+Private Sub Text1_Change()
+
+End Sub
